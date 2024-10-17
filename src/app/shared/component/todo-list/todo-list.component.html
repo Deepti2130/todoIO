@@ -1,0 +1,19 @@
+<ul class="list-group mt-4" *ngIf="todoData.length > 0; else noData">
+  <li class="list-group-item text-white font-weight-bold"
+  [ngClass]="{
+    'bg-success':todo.todoRating >= 4,
+    'bg-warning':todo.todoRating >= 3 && todo.todoRating < 4,
+    'bg-danger':todo.todoRating < 3
+  }"
+  *ngFor="let todo of todoData">
+   {{todo.todoItem}}
+  </li>
+</ul>
+
+<!-- when the data is not added then show the msg -->
+  <ng-template #noData>
+  <p class="alert alert-info">
+    No Data found!!!
+  </p>
+  </ng-template>
+

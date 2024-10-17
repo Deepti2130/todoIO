@@ -1,0 +1,16 @@
+<!-- it is need to bind ngForm and there event to submit the form -->
+<form #todoForm="ngForm" (ngSubmit)="ontodoAdd(todoForm)">
+  <div class="form-group">
+    <label for="todoItem">Todo Item</label>
+    <input required name="todoItem" ngModel class="form-control" type="text" id="todoItem">
+  </div>
+
+  <div class="form-group">
+    <label for="todoRating">Todo Rating</label>
+    <input required name="todoRating" ngModel class="form-control" type="text" id="todoRating">
+  </div>
+
+  <button
+  [disabled]="todoForm.invalid"
+  class="btn btn-sm btn-large btncss">Add Todo</button>
+</form>

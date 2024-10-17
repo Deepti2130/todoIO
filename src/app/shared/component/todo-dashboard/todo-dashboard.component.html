@@ -1,0 +1,10 @@
+<div class="row">
+  <div class="col-md-6 font-weight-bold">
+  <app-todoform (todoEmiter)="ongetTodo($event)"></app-todoform>
+  <!-- the data bind to child to parent hence it is need to custom event binding -->
+  </div>
+  <div class="col-md-6">
+  <app-todo-list [todoData]="todoArr" ></app-todo-list>
+  <!-- the data bind to parent to child hence it is need to custom property binding -->
+  </div>
+</div>
